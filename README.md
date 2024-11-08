@@ -40,7 +40,9 @@ En el caso de usar Linux en lugar del ; que esta después de /clases se debe usa
 ![image](https://github.com/user-attachments/assets/0d7063fe-58e7-4055-a830-835278b4bcaf)
 
 
-La salida del comando debe indicar que hay un proceso corriendo y desde un navegador ingresando a la siguiente URL y ejecutando la petición get /greeting, se debe obtener la salida esperada (HELLOW WORLD)
+La salida del comando debe indicar que hay un proceso corriendo
+
+Pra poder probar la aplicación se debe ingresar desde un navegador a la siguiente URL: http://localhost:33025 y ejecutar la petición get /greeting, se debe obtener la salida esperada (HELLOW WORLD)
 
 http://localhost:33025/greeting
 
@@ -81,12 +83,35 @@ Si todo esta correcto, se debe mostrar la salida de la petición get esperada, H
 
 ![image](https://github.com/user-attachments/assets/36f04fc2-0a4f-4494-bf21-4e67fd0d4244)
 
+![image](https://github.com/user-attachments/assets/88d803a0-bc22-46c5-9dff-27c7856d134b)
 
-La imagen que se crea en Docker, se puede subir a dockerhub,para que esta este disponible y se pueda desplegar en otros ambientes que cuenten con Docker, como una maquina virtual montada en alguna nube, como AWS, AZURE u otros.
 
-ára este laboratorio se monto una maquina virtual Linux en AWS por medio del servicio de EC2
+La imagen que se crea en Docker, se subió dockerhub,para que esta este disponible y se pueda desplegar en otros ambientes que cuenten con Docker, como una maquina virtual montada en alguna nube, como AWS, AZURE u otros.
+
+![image](https://github.com/user-attachments/assets/15fd0697-5c14-487f-a3b5-f845854ceeaf)
+
+
+Para este tutorial se monto una maquina virtual Linux en AWS por medio del servicio de EC2
 
 ![image](https://github.com/user-attachments/assets/4840ae81-cc58-4c84-9932-4fa4d18b98b8)
+
+En dicha maquina se instalo dockers y se creó un container con base en la imagen subida previamente en dockerhub, utilizando el comando: 
+docker run -d -p "puerto por el que se va a acceder":33025 --name "nombre del container" "imagen expuesta en dockerhub"
+y exponiendo el container por el puerto 42000, como se puede ver a continuación:
+
+![image](https://github.com/user-attachments/assets/b0eca091-b8de-4929-aec7-ab0f08363ba4)
+
+y dentro del "grupo de seguridad" o reglas de firewall para esta maquina virtual se configuró el acceso por el puerto 42000 desde cualquier IP.
+
+![image](https://github.com/user-attachments/assets/7535c28e-0496-4f2c-bd88-3652b643ebe8)
+
+Pra poder probar la aplicación se debe ingresar desde un navegador a la siguiente URL: http://"IP o DNS publico de AWS":42000 y ejecutar la petición get /greeting, se debe obtener la salida esperada (HELLOW WORLD)
+
+[http://localhost:33025/greeting](http://"IP o DNS publico de AWS":42000/greeting)
+
+![image](https://github.com/user-attachments/assets/11004353-248f-485f-9822-efa8af281889)
+
+![image](https://github.com/user-attachments/assets/e06eadd6-f8a2-4b52-ae47-5d57f6bf49f3)
 
 
 
