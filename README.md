@@ -1,4 +1,10 @@
 ﻿# AYGO-tutorial
+
+ Arquitectura de la aplicación subida a este repositorio:
+
+![image](https://github.com/user-attachments/assets/f79dfe65-86d1-4d94-a859-86c7faa8ff7f)
+
+
 El código disponible en este repositorio, consiste en una aplicación básica en java usando nextbean versión 23, que se forma por medio de 2 clases:
 
 HelloRestController: Esta clase tiene como función el manejo de peticiones tipo get, realizadas sobre el servicio expuesto (localhost o URL) al correr la aplicación, la petición que se debe realizar es /greeting y la salida esperada es HELLOW WORLD.
@@ -37,3 +43,8 @@ http://localhost:"puerto configurado al crear el container"/greeting
 Si todo esta correcto, se debe mostrar la salida de la petición get esperada, HELLOW WORLD
 
 La imagen que se crea en Docker, se puede subir a dockerhub,para que esta este disponible y se pueda desplegar en otros ambientes que cuenten con Docker, como una maquina virtual montada en alguna nube, como AWS, AZURE u otros.
+
+
+
+
+
